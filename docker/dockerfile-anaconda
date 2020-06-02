@@ -1,0 +1,13 @@
+FROM cpu-202005-anaconda
+
+COPY docker/requirements-anaconda.txt ./
+RUN pip install -r requirements-anaconda.txt
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg  add - && apt-get update -y && apt-get install google-cloud-sdk -y
+
+COPY docker/startup.py /app/startup/
+COPY docker/startup.sh /app/startup/
+COPY docker/server.py /app/startup/
+COPY docker/server.sh /app/startup/
+COPY docker/env.py /app/startup/
+WORKDIR /app/startup
+
