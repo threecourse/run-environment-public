@@ -1,5 +1,6 @@
-import tarfile
 import os
+import tarfile
+
 
 def compress(target_dir: str, out_path: str):
     """対象フォルダ内を圧縮してtar.gzに保存する"""

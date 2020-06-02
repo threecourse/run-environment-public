@@ -1,9 +1,10 @@
 import datetime
-import google.cloud.logging
 import json
 import logging
 import os
-import sys
+
+import google.cloud.logging
+
 from env import Env
 from model import Model
 from util import gce, gcs

@@ -1,11 +1,13 @@
 import argparse
-import google.cloud.logging
 import logging
 import os
 import sys
-import configure
 import warnings
+
+import configure
+import google.cloud.logging
 import run
+
 from env import Env
 from util import git
 

@@ -1,10 +1,11 @@
 import json
 import os
-import tarfile
-import tempfile
 import shutil
 import subprocess
+import tempfile
+
 from google.cloud import tasks_v2
+
 from env import Env
 from util import files, gcp
 

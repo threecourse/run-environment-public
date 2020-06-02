@@ -1,5 +1,6 @@
 import json
 import os
+
 from google.cloud import storage
 
 
@@ -26,5 +27,3 @@ def download_json(bucket_name: str, source_blob_name: str):
     json_str = blob.download_as_string()
     data = json.loads(json_str)
     return data
-
-

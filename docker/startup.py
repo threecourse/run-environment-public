@@ -1,10 +1,11 @@
 import argparse
 import os
-import tarfile
-import shutil
 import subprocess
-from env import Env
+import tarfile
+
 from google.cloud import storage
+
+from env import Env
 
 
 def download_blob(bucket_name: str, source_blob_name: str, destination_file_name: str, project_id: str):
